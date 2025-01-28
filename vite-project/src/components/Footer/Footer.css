@@ -1,0 +1,14 @@
+.footer {
+    margin: 171px auto 24px;
+    max-width: 1358px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__name {
+    margin: 0;
+}
+
+.footer__year {
+    margin: 0;
+}
