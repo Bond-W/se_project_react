@@ -71,6 +71,10 @@
     color: #000000;
 }
 
+.modal__label_type_radio:checked {
+    color: #000000;
+}
+
 .modal__input {
     display: block;
     border: none;
@@ -90,7 +94,6 @@
     flex-direction: column;
     border: none;
     padding: 0;
-    /* margin-bottom: 24px; */
     margin: 0 0 24px 0;
 }
 
