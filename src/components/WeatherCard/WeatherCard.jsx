@@ -1,5 +1,6 @@
 import "./WeatherCard.css";
 import { weatherOptions, deafultWeatherOptions } from "../../utils/constants";
+import CurrentTempatureUnitContext from "../../contexts/CurrentTempatureUnitContext";
 
 
 function WeatherCard({ weatherData }) {
