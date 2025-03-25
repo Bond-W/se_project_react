@@ -1,10 +1,4 @@
 
-
-.main__description {
-    font-weight: 700;
-    font-size: 20px;
-}
-
 .main__Items {
     display: flex;
     flex-wrap: wrap;
