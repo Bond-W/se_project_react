@@ -61,7 +61,7 @@ export const weatherOptions = [
     },
 ]
 
-export const deafultWeatherOptions = {
+export const defaultWeatherOptions = {
     day: {
         url: new URL("../assets/day/default.png", import.meta.url).href
     },
