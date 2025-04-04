@@ -38,16 +38,22 @@
 .header__user-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     flex-shrink: 0;
 }
 
 .header__username {
     margin: 0;
-    max-width: 150px;
+    height: 25px;
+    max-width: 157px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 700;
+    line-height: 100%;
+    font-size: 20px;
+    
 }
 
 .header__avatar {
@@ -55,9 +61,11 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    padding-left: 12px;
 }
 
 .header__link {
     text-decoration: none;
     color: #000;
+    display: flex;
 }

@@ -1,10 +1,17 @@
 
-.main__Items {
+
+.main__description {
+    margin: 40px 0 34px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.main__items {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;list-style-type: none;
-    gap: 21px;
-    
+    gap: 20px;
+    list-style-type: none;
+    width: 100%;
 }
 

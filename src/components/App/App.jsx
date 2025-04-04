@@ -14,6 +14,7 @@ import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import { getItems, removeItem, addItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -64,6 +65,14 @@ function App() {
 
   useEffect(() => {
     setClothingItems(defaultClothingItems);
+  }, []);
+
+  useEffect(() => {
+    getItems()
+    .then((data) => {
+      console.log(data);
+    })
+    .catch(console.error);
   }, []);
 
   return (
