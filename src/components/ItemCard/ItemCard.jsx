@@ -13,7 +13,7 @@ function ItemCard({ item, onCardClick, onCardDelete }) {
     <li className="clothing__item card">
       <p className="card__name">{item.name}</p>
       <img
-        onClick={onCardClick}
+        onClick={() => onCardClick(item)}
         className="card__image"
         src={item.link}
         alt={item.name}

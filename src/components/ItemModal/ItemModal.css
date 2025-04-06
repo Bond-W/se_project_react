@@ -6,7 +6,7 @@
 }
 
 .modal__close-preview {
-  background: url(../../assets/Close.svg);
+  background-color: transparent;
   width: 16px;
   height: 16px;
 }
@@ -18,8 +18,8 @@
 
 .modal__image {
   box-sizing: content-box;
-  width: 100%;
-  height: 100%;
+  width: 496px;
+  height: 498px;
   border-radius: 16px 16px 0 0;
   border-bottom: 1px;
 }
@@ -27,6 +27,8 @@
 .modal__footer {
   margin: 20px auto 32px 32px;
   background-color: white;
+  position: relative;
+  
 }
 
 .modal__caption {

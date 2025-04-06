@@ -15,6 +15,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { getItems, removeItem, addItem } from "../../utils/api";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -28,6 +29,8 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [itemToDelete, setItemToDelete] = useState(null);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -40,6 +43,29 @@ function App() {
 
   const closeActiveModals = () => {
     setActiveModal("");
+  };
+
+  const handleDeleteClick = (card) => {
+    setItemToDelete(card);
+    setShowConfirmModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (!itemToDelete) return;
+
+    removeItem(itemToDelete._id)
+      .then(() => {
+        const updatedItems = clothingItems.filter(
+          (item) => item._id !== itemToDelete._id
+        );
+        setClothingItems(updatedItems);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setItemToDelete(null);
+        setShowConfirmModal(false);
+        closeActiveModals();
+      });
   };
 
   const handleToggleSwitchChange = () => {
@@ -69,10 +95,10 @@ function App() {
 
   useEffect(() => {
     getItems()
-    .then((data) => {
-      console.log(data);
-    })
-    .catch(console.error);
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(console.error);
   }, []);
 
   return (
@@ -90,13 +116,13 @@ function App() {
                 <Main
                   weatherData={weatherData}
                   clothingItems={clothingItems}
-                  onCardClick={handleCardClick}
+                  handleCardClick={handleCardClick}
                 />
               }
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={<Profile onCardClick={handleCardClick} handleAddClick={handleAddClick} />}
             />
           </Routes>
 
@@ -111,6 +137,13 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModals}
+          onDeleteRequest={handleDeleteClick}
+        />
+        <ConfirmModal
+          isOpen={showConfirmModal}
+          onClose={() => setShowConfirmModal(false)}
+          onConfirm={handleConfirmDelete}
+           itemName={itemToDelete?.name}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

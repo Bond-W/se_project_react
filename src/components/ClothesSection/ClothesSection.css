@@ -4,8 +4,11 @@
 
 .clothes-section__header {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
     margin: 35px 0 0;
+    font-size: 20px;
+    
 }
 
 .clothes-section__button {
@@ -13,13 +16,20 @@
     background: transparent;
     opacity: 60%;
     line-height: 1;
-    width: 88px;
     height: 25px;
     padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.clothes-section__button:hover {
+    opacity: 1;
 }
 
 .clothes-section__title {
     margin: 0;
+    font-weight: 700;
 }
 
 .clothes-section__items {

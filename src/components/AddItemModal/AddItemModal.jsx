@@ -1,7 +1,7 @@
 import "./AddItemModal.css";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import ModalWithForm from "../ModalWIthForm/ModalWithForm";
 import { useState } from "react";
-import { use } from "react";
+
 
 export default function AddItemModal({ onClose, isOpen, onAddItemModalSubmit }) {
   const [name, setName] = useState("");
@@ -77,7 +77,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItemModalSubmit }) 
             onChange={handleWeatherChange}
             checked={weather === "hot"}
           />
-          Hot
+         <span>Hot</span>
         </label>
         <label htmlFor="warm" className="modal__label modal__label_type_radio">
           <input
@@ -89,7 +89,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItemModalSubmit }) 
             onChange={handleWeatherChange}
             checked={weather === "warm"}
           />
-          Warm
+          <span>Warm</span>
         </label>
         <label htmlFor="cold" className="modal__label modal__label_type_radio">
           <input
@@ -101,7 +101,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItemModalSubmit }) 
             onChange={handleWeatherChange}
             checked={weather === "cold"}
           />
-          Cold
+          <span>Cold</span>
         </label>
       </fieldset>
     </ModalWithForm>
