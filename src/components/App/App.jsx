@@ -73,11 +73,12 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    setClothingItems((prevItems) => [
-      { name, link: imageUrl, weather },
-      ...prevItems,
-    ]);
-    closeActiveModals();
+    addItem({ name, weather, link: imageUrl })
+      .then((newItemFromServer) => {
+        setClothingItems((prevItems) => [newItemFromServer, ...prevItems]);
+        closeActiveModals();
+      })
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
@@ -96,7 +97,13 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log(data);
+        const transformed = data.map((item) => ({
+          ...item,
+          _id: item.id || item._id, 
+          link: item.link || item.imageUrl, 
+        }));
+  
+        setClothingItems(transformed);
       })
       .catch(console.error);
   }, []);
@@ -122,7 +129,14 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} handleAddClick={handleAddClick} />}
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  handleAddClick={handleAddClick}
+                  clothingItems={clothingItems}
+                  onCardDelete={handleDeleteClick}
+                />
+              }
             />
           </Routes>
 
@@ -143,7 +157,7 @@ function App() {
           isOpen={showConfirmModal}
           onClose={() => setShowConfirmModal(false)}
           onConfirm={handleConfirmDelete}
-           itemName={itemToDelete?.name}
+          itemName={itemToDelete?.name}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

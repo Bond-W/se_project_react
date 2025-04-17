@@ -1,8 +1,12 @@
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
-import { defaultClothingItems } from "../../utils/constants";
 
-function ClothesSection({ onCardClick, onAddClick }) {
+function ClothesSection({
+  onCardClick,
+  onAddClick,
+  clothingItems,
+  onCardDelete,
+}) {
   return (
     <div className="clothes-section">
       <div className="clothes-section__header">
@@ -12,8 +16,13 @@ function ClothesSection({ onCardClick, onAddClick }) {
         </button>
       </div>
       <ul className="clothes-section__items">
-        {defaultClothingItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+        {clothingItems.map((item) => (
+          <ItemCard
+            key={item._id}
+            item={item}
+            onCardClick={onCardClick}
+            onCardDelete={onCardDelete}
+          />
         ))}
       </ul>
     </div>
