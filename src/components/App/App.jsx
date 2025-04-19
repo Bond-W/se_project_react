@@ -59,13 +59,11 @@ function App() {
           (item) => item._id !== itemToDelete._id
         );
         setClothingItems(updatedItems);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => {
         setItemToDelete(null);
         setShowConfirmModal(false);
         closeActiveModals();
-      });
+      })
+      .catch(console.error);   
   };
 
   const handleToggleSwitchChange = () => {
@@ -91,7 +89,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setClothingItems(defaultClothingItems);
+    setClothingItems();
   }, []);
 
   useEffect(() => {
