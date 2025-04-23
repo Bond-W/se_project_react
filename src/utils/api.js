@@ -35,4 +35,4 @@ const removeItem = (id) => {
     }).then(handleServerResponse);
 }
 
-export { getItems, addItem, removeItem };
+export { getItems, addItem, removeItem, handleServerResponse };
