@@ -88,9 +88,12 @@ function App() {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    setClothingItems();
-  }, []);
+ 
+useEffect(() => {
+  getItems()
+    .then((items) => setClothingItems(items))
+    .catch(console.error);
+}, []);
 
   useEffect(() => {
     getItems()
