@@ -89,11 +89,11 @@ function App() {
   }, []);
 
  
-useEffect(() => {
-  getItems()
-    .then((items) => setClothingItems(items))
-    .catch(console.error);
-}, []);
+// useEffect(() => {
+//   getItems()
+//     .then((items) => setClothingItems(items))
+//     .catch(console.error);
+// }, []);
 
   useEffect(() => {
     getItems()

@@ -1,4 +1,6 @@
-
+.main {
+    background-color: #f3f3f3;
+}
 
 .main__description {
     margin: 40px 0 34px;
