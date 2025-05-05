@@ -67,16 +67,6 @@ The project follows modern web development practices, including modular JavaScri
 ## Demo
 No public demo link is available yet.
 
-_Screenshots:_
-
-**Main Page:**
-![Main Page](../se_project_aroundtheus/src/images/mainpic.png)
-
-**Edit Profile Modal:**
-![Edit Profile](../se_project_aroundtheus/src/images/editmodalpic.png)
-
-**Add New Photo Modal:**
-![Add Photo](../se_project_aroundtheus/src/images/newphotopic.png)
 
 ---
 
