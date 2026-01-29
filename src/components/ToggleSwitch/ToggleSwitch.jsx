@@ -28,7 +28,7 @@ export default function ToggleSwitch() {
       </span>
       <span
         style={{ color: currentTemperatureUnit === "C" ? "#fff" : "#7e7e7e"}}
-        className= "toggle-switch__text toggle-switch__text_C"
+        className="toggle-switch__text toggle-switch__text_C"
       >
         C
       </span>

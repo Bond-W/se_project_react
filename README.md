@@ -7,9 +7,20 @@
 - Switch between Celcius and Fahrenheit.
 - Delete Items with confirmation prompts.
 
+
 The project follows modern web development practices, including modular JavaScript and reusable components. It also has full CRUD functionality with a mock backend server using JSON Server.
 
 ---
+
+
+The project follows modern web development practices, including modular JavaScript and reusable components. This project also uses a separate Express + MongoDB backend (JWT authentication).
+
+
+---
+
+## Backend Repository
+Backend API repo: https://github.com/Bond-W/se_project_express
+
 
 
 
@@ -62,6 +73,22 @@ The project follows modern web development practices, including modular JavaScri
 - **Responsive UI:**
   - Clean separation of modals and reusable components.
 
+
+
+  - **Authentication**
+  - Users can register and sign in
+  - JWT token is stored in localStorage
+  - Token is checked on page load to restore sessions
+
+- **Likes**
+  - Logged-in users can like/unlike items
+  - Like state persists between page loads
+
+- **Edit Profile**
+  - Logged-in users can update name + avatar URL
+
+
+
 ---
 
 ## Demo
@@ -75,11 +102,18 @@ No public demo link is available yet.
 ### Installation
 1. Clone this repository:
    ```bash
+
    git clone https://github.com/Bond-W/se_project_react.git
 
 2. Navigate to the project directory:
    ```bash
    cd react-1
+
+   git clone https://github.com/Bond-W/se_project_react-1.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd se_project_react-1
 
 3. Install the dependencies:
    ```bash
@@ -95,6 +129,11 @@ No public demo link is available yet.
    npm run dev
 
 
+
+
+
+
+
 ---
 
 ## Technologies Used
@@ -106,6 +145,10 @@ No public demo link is available yet.
 - **Context API** 
 - **JSON Server**
 - **OpenWeatherMap API**
+- **OpenWeatherMap API**
+- **Node.js / Express**
+- **MongoDB / Mongoose**
+- **JWT auth**
 
 ---
 
@@ -134,6 +177,19 @@ src/
 
 ## API Reference
 
+- POST /signup
+- POST /signin
+- GET /users/me
+- PATCH /users/me
+- PUT /items/:id/likes
+- DELETE /items/:id/likes
+- POST /items (protected)
+- DELETE /items/:id (protected)
+- GET /items (public)
+
+
+
+
 ### Base URL
 - http://localhost:3001
 
@@ -151,4 +207,9 @@ src/
 
 ## Contact Me
 [GitHub](https://github.com/)
+
+
+
+## Contact Me
+[GitHub](https://github.com/Bond-W)
 [LinkedIn](www.linkedin.com/in/bondawyatt)

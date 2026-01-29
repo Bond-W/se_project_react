@@ -8,4 +8,20 @@
 .sidebar__avatar {
     width: 56px;
     height: 56px;
+<<<<<<< HEAD
 }
+=======
+}
+
+.sidebar__avatar_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+}
+>>>>>>> 7b38791 (fully updated repository)

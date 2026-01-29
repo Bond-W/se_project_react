@@ -17,7 +17,7 @@ export const weatherOptions = [
     {
         day: true,
         condition: "rain",
-        url: new URL("../assets/day/rain", import.meta.url).href,
+        url: new URL("../assets/day/rain.png", import.meta.url).href,
     },
     {
         day: true,
@@ -47,7 +47,7 @@ export const weatherOptions = [
     {
         day: false,
         condition: "rain",
-        url: new URL("../assets/night/rain", import.meta.url).href,
+        url: new URL("../assets/night/rain.png", import.meta.url).href,
     },
     {
         day: false,
@@ -115,4 +115,4 @@ export const defaultClothingItems = [
     longitude: -86.627809,
   };
 
-  export const APIkey = "fcbfedb065dd6c42d3c2b26e1c9c6209";
+  export const apiKey = "fcbfedb065dd6c42d3c2b26e1c9c6209";

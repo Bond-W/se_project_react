@@ -64,6 +64,22 @@
     padding-left: 12px;
 }
 
+<<<<<<< HEAD
+=======
+.header__avatar_placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+>>>>>>> 7b38791 (fully updated repository)
 .header__link {
     text-decoration: none;
     color: #000;

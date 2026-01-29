@@ -1,19 +1,40 @@
 import "./ItemCard.css";
-function ItemCard({ item, onCardClick, onCardDelete }) {
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
+function ItemCard({ item, onCardClick, onCardLike, isLoggedIn }) {
+  const currentUser = useContext(CurrentUserContext);
 
+  const isLiked =
+    currentUser?._id && item.likes
+      ? item.likes.some((id) => String(id) === String(currentUser._id))
+      : false;
 
-  const handleDeleteClick = () => {
-    onCardDelete(item);
-  };
+  const itemLikeButtonClassName = `card__like-button ${
+    isLiked ? "card__like-button_liked" : ""
+  }`;
+
+  const handleLike = () => onCardLike(item);
 
   return (
     <li className="clothing__item card">
-      <p className="card__name">{item.name}</p>
+      <div className="card__header">
+        <p className="card__name">{item.name}</p>
+
+        {isLoggedIn && (
+          <button
+            type="button"
+            className={itemLikeButtonClassName}
+            onClick={handleLike}
+            aria-label="Like item"
+          />
+        )}
+      </div>
+
       <img
         onClick={() => onCardClick(item)}
         className="card__image"
-        src={item.link}
+        src={item.link || item.imageUrl}
         alt={item.name}
       />
     </li>
@@ -21,3 +42,4 @@ function ItemCard({ item, onCardClick, onCardDelete }) {
 }
 
 export default ItemCard;
+
