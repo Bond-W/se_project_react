@@ -7,10 +7,6 @@
   border-radius: 20px;
   box-sizing: border-box;
   z-index: 0;
-<<<<<<< HEAD
-  overflow: visible;
-=======
->>>>>>> 7b38791 (fully updated repository)
   overflow: hidden;
   cursor: pointer;
 }

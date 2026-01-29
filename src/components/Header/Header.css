@@ -64,8 +64,6 @@
     padding-left: 12px;
 }
 
-<<<<<<< HEAD
-=======
 .header__avatar_placeholder {
     display: flex;
     align-items: center;
@@ -79,7 +77,6 @@
     text-transform: uppercase;
 }
 
->>>>>>> 7b38791 (fully updated repository)
 .header__link {
     text-decoration: none;
     color: #000;
